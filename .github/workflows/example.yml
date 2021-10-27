@@ -1,0 +1,21 @@
+name: authenticate-docker-image
+on:
+  push:
+    branches: [main]
+
+jobs:
+  authenticate-image:
+    runs-on: ubuntu-latest
+      # Pull an image that has been previously notarized
+      - name: debug
+        run: docker pull codenotary/cas:bom-docker
+        shell: bash
+
+      - name: authenticate sample asset
+        #--> Run the GitHub action
+        uses: codenotary/cas-authenticate-docker-image-github-action@main
+        with:
+          # The image was previously notarized using this signerID wich is why the authentication will succeed
+          asset: docker://codenotary/cas:bom-docker
+          signerID: Y29kZW5vdGFyeXRlc3QrMTNAZ21haWwuY29t
+
