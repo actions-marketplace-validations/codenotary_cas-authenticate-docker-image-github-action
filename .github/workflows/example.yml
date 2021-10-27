@@ -6,8 +6,9 @@ on:
 jobs:
   authenticate-image:
     runs-on: ubuntu-latest
+    steps:
       # Pull an image that has been previously notarized
-      - name: debug
+      - name: pull image
         run: docker pull codenotary/cas:bom-docker
         shell: bash
 
