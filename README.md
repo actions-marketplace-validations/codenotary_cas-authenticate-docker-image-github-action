@@ -1,6 +1,6 @@
 # cas-authenticate-docker-image-github-action
 
-GitHub action that uses the **[cas](https://github.com/codenotary/cas)** tool to authenticate Docker images.
+GitHub action that uses the **[cas](https://cas.codenotary.com)** tool to authenticate Docker images.
 
 ## How to use it
 
